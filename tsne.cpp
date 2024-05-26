@@ -375,7 +375,7 @@ static void computeGaussianPerplexity(double* X, int N, int D, double* P, double
 
 		// Iterate until we found a good perplexity
 		int iter = 0;
-		while(!found && iter < 200) {
+		while(iter < 200) {
 
 			// Compute Gaussian kernel row
 			for(int m = 0; m < N; m++) P[nN + m] = exp(-beta * DD[nN + m]);
@@ -475,7 +475,7 @@ static void computeGaussianPerplexity(double* X, int N, int D, unsigned int** _r
 
         // Iterate until we found a good perplexity
         int iter = 0; double sum_P;
-        while(!found && iter < 200) {
+        while(iter < 200) {
 
             // Compute Gaussian kernel row
             for(int m = 0; m < K; m++) cur_P[m] = exp(-beta * distances[m + 1] * distances[m + 1]);
